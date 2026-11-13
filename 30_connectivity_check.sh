@@ -6,7 +6,8 @@
 read -p "Which site you want to check? " site
 
 #This will check the site is reachable
-ping -c 1 $site
+ping -c 1 $site &> /dev/null
+#Here &> /dev/null/ will redirect ping output to dev/null rather than terminal or file.
 
 
 if [[ $? -eq 0 ]]
